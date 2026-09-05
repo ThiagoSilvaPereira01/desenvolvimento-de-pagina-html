@@ -1,0 +1,342 @@
+/* ==========================================================================
+   TRABALHO PRÁTICO 2 - LINGUAGEM E TÉCNICAS DE PROGRAMAÇÃO
+   Tema: Top 5 Jogos Favoritos de 2026
+   Estilização completa com seletores de Tag, ID, Classe, Atributo,
+   Pseudo-classes e Pseudo-elementos.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ESTILIZAÇÃO GERAL E SELETORES DE TAG
+   -------------------------------------------------------------------------- */
+
+/* Reseta margens e define o modelo de caixa padrão */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do corpo da página: cores de fundo, fonte e espaçamento */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121214; /* Fundo escuro moderno estilo gamer */
+    color: #e1e1e6;            /* Cor do texto principal de alto contraste */
+    line-height: 1.6;
+    padding: 30px 15px;
+}
+
+/* Título principal da página */
+h1 {
+    color: #04d361; /* Destaque em verde */
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* Subtítulo abaixo do título principal */
+h3 {
+    color: #a8a8b3;
+    font-weight: 400;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* Parágrafos gerais */
+p {
+    margin-bottom: 16px;
+    color: #c4c4cc;
+}
+
+/* Listas ordenadas e não ordenadas */
+ol, ul {
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Links padrão */
+a {
+    color: #4ea8de;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. SELETORES DE CLASSE (.classe)
+   -------------------------------------------------------------------------- */
+
+/* Classe para criar 'cards' visuais para cada divisão/seção */
+.secao {
+    background-color: #202024;
+    max-width: 800px;
+    margin: 0 auto 28px auto;
+    padding: 24px 28px;
+    border-radius: 10px;
+    border: 1px solid #29292e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Classe para o container da galeria de imagens */
+.galeria-jogos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 18px 0 24px 0;
+}
+
+/* Classe para as imagens dos jogos */
+.img-jogo {
+    border-radius: 8px;
+    border: 2px solid #323238;
+    object-fit: cover;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.img-jogo:hover {
+    transform: scale(1.08);
+    border-color: #04d361;
+    box-shadow: 0 6px 16px rgba(4, 211, 97, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   3. SELETORES DE ID (#id)
+   -------------------------------------------------------------------------- */
+
+/* ID da seção de introdução: centraliza o topo */
+#introducao {
+    border-top: 4px solid #04d361;
+}
+
+/* ID da seção da tabela */
+#avaliacao {
+    border-top: 4px solid #8257e6;
+}
+
+/* ID da seção de links */
+#links {
+    border-top: 4px solid #4ea8de;
+}
+
+/* ID da seção do formulário */
+#formulario {
+    border-top: 4px solid #ff79c6;
+}
+
+/* --------------------------------------------------------------------------
+   4. ESTILIZAÇÃO DA TABELA (TAGS + PSEUDO-CLASSES)
+   -------------------------------------------------------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #121214;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #323238;
+}
+
+/* Cabeçalho da tabela */
+thead th {
+    background-color: #8257e6;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* Células de dados */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #29292e;
+}
+
+/* Pseudo-classe :nth-child(even) para efeito zebrado nas linhas */
+tbody tr:nth-child(even) {
+    background-color: #1a1a1e;
+}
+
+/* Pseudo-classe :hover para destacar a linha ao passar o mouse */
+tbody tr:hover {
+    background-color: #29292e;
+}
+
+/* Rodapé da tabela */
+tfoot td {
+    background-color: #18181b;
+    font-style: italic;
+    color: #a8a8b3;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   5. SELETORES DE ATRIBUTO ([atributo="valor"])
+   -------------------------------------------------------------------------- */
+
+/* Estiliza campos de texto e e-mail pelo atributo type */
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color: #121214;
+    border: 1px solid #323238;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Seletor de atributo para links externos com target="_blank" */
+a[target="_blank"] {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+/* Seletor de atributo e classe para o botão de envio */
+input[type="submit"].btn-enviar {
+    background-color: #04d361;
+    color: #000000;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Labels do formulário */
+label {
+    font-weight: 600;
+    color: #e1e1e6;
+    display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   6. PSEUDO-CLASSES (:hover, :focus, :active)
+   -------------------------------------------------------------------------- */
+
+/* Efeito ao passar o mouse em links */
+a:hover {
+    color: #04d361;
+    text-decoration: underline;
+}
+
+/* Efeito de foco quando o usuário clica nos campos de formulário */
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+    border-color: #8257e6;
+    box-shadow: 0 0 0 2px rgba(130, 87, 230, 0.4);
+}
+
+/* Efeitos no botão de envio */
+input[type="submit"].btn-enviar:hover {
+    background-color: #00b352;
+}
+
+input[type="submit"].btn-enviar:active {
+    transform: scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   7. PSEUDO-ELEMENTOS (::after, ::placeholder, ::marker)
+   -------------------------------------------------------------------------- */
+
+/* Pseudo-elemento ::after para criar uma barrinha colorida abaixo dos títulos h2 */
+h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #8257e6;
+    margin-top: 6px;
+    border-radius: 2px;
+}
+
+/* Pseudo-elemento ::marker para personalizar os números da lista ordenada */
+ol li::marker {
+    color: #04d361;
+    font-weight: bold;
+}
+
+/* Pseudo-elemento ::placeholder para cor do texto de exemplo dos inputs */
+input::placeholder {
+    color: #7c7c8a;
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   8. ESTILIZAÇÃO ESPECIAL DOS LINKS (#links)
+   -------------------------------------------------------------------------- */
+
+/* Alinhamento e destaque dos subtítulos na seção de links */
+#links h3 {
+    text-align: left;
+    color: #4ea8de;
+    font-size: 1.05rem;
+    margin: 22px 0 12px 0;
+}
+
+/* Exibição dos links lado a lado como botões/cards */
+#links p {
+    display: inline-block;
+    margin: 4px 8px 8px 0;
+}
+
+/* Transforma as tags <a> da seção em botões modernos */
+#links a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #18181b;
+    color: #e1e1e6;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid #323238;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s ease;
+}
+
+/* Efeito ao passar o mouse nos links externos dos jogos */
+#links a:hover {
+    background-color: #4ea8de;
+    color: #121214;
+    border-color: #4ea8de;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(78, 168, 222, 0.35);
+    text-decoration: none;
+}
+
+/* Destaque visual com seletor de atributo para o link do formulário */
+#links a[href="#formulario"] {
+    background-color: #272038;
+    border-color: #8257e6;
+    color: #c4b5fd;
+}
+
+#links a[href="#formulario"]:hover {
+    background-color: #8257e6;
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(130, 87, 230, 0.45);
+}
